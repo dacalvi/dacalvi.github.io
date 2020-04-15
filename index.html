@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#008000"/>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Hambre Cero Misiones</title>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="rgb(63,81,181)">
+
+
+
+
+    </head>
+  </head>
+  <body>
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <!-- Add spacer, to align navigation to the right -->
+          <span class="mdl-layout-title" style="font-weight: bolder; color: cyan;">HAMBRE CERO</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Hambre Cero</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#acceder">Solicitar Asistencia</a>
+          <a class="mdl-navigation__link" href="">Informaciones Utiles</a>
+          <a class="mdl-navigation__link" href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19">COVID-19</a>
+          <a class="mdl-navigation__link" href="http://www.misiones.gov.ar/">Gobierno Misiones</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+
+          <div id="home" class="page">
+            <div style="padding: 30px; text-align: justify;">
+              El programa provincial de Recuperación Nutricional Hambre Cero
+              surge de una decisión política de abordar la problemática de los
+              niños con mal nutrición y se ejecuta a través de la Subsecretaría
+              de Derechos conómicos, Sociales y Culturales del Ministerio
+              de Desarrollo Social, la Mujer y la Juventud.
+            </div>
+
+
+            <video autoplay muted loop id="myVideo"
+              style="width: 100%;position: absolute;top: 210px;z-index: -1;left: -30px;">
+              <source src="video/milk.mp4" type="video/mp4">
+            </video>
+
+            <center>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="showPage('acceder')">
+                SOLICITAR
+              </button>
+            </center>
+          </div>
+
+
+          <div id="acceder" class="page" style="display:none; background-image: radial-gradient(#4b36f3, rgb(63,81,181));height: 100%;">
+
+            <form action="http://hambrecero.96.lt/api/post.php" method="post">
+              <center>
+
+                <div class="mdl-card mdl-card-order mdl-shadow--8dp">
+                  <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Datos personales</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text mdl-grid">
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="text" id="nombre" name="nombre" required
+                        placeholder="Nombre Completo" />
+                      <label class="mdl-textfield__label" for="nombre">Nombre Completo</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="number" id="dni" name="dni" required
+                        placeholder="Número de Documento" />
+                      <label class="mdl-textfield__label" for="dni">DNI</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="text" id="direccion" name="direccion" required
+                        placeholder="Dirección" />
+                      <label class="mdl-textfield__label" for="direccion">Dirección</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="text" id="telefono" name="telefono" required
+                        placeholder="Numero de Teléfono" />
+                      <label class="mdl-textfield__label" for="telefono">Número de teléfono</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="date" id="nacimiento" name="nacimiento" required
+                        placeholder="Fecha de Nacimiento" />
+                      <label class="mdl-textfield__label" for="nacimiento">Fecha de Nacimiento</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="number" id="numeromenores"
+                        placeholder="Número de menores cargo" required
+                        onchange="if( parseInt(this.value) > 0 ){ $('#datosmenores').show(); }else{ $('#datosmenores').show(); }" />
+                      <label class="mdl-textfield__label" for="numeromenores">Número de menores a cargo</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield" id="datosmenores" style="display: none;">
+                      <textarea class="mdl-textfield__input" type="text" rows="4" id="datosmenores"
+                        name="datosmenores"></textarea>
+                      <label class="mdl-textfield__label" for="datosmenores">Ingrese los datos de los menores, nombre,
+                        dni y edad</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+                      <input class="mdl-textfield__input" type="number" id="numeromayores" name="numeromayores"
+                        placeholder="Número de mayores cargo"
+                        onchange="if( parseInt(this.value) > 0 ){ $('#datosmayores').show(); }else{ $('#datosmayores').show(); }" />
+                      <label class="mdl-textfield__label" for="numeromayores">Número de mayores a cargo</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield" id="datosmayores" style="display: none;">
+                      <textarea class="mdl-textfield__input" type="text" rows="4" id="sample5"></textarea>
+                      <label class="mdl-textfield__label" for="sample5">Ingrese los datos de los menores, nombre, dni y
+                        edad</label>
+                    </div>
+
+                    <input type="hidden" name="coordenadas" id="coordenadas" value="">
+                    <div class="mdl-card__actions mdl-cell--12-col send-button">
+                      <button
+                        class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored"
+                        id="enviar">
+                        ENVIAR SOLICITUD
+                      </button>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+            </form>
+
+            
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+    </script>
+  </body>
+</html>
